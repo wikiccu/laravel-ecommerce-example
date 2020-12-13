@@ -1,11 +1,12 @@
-@extends('layout')
+@extends('layouts.app')
 
-@section('title', 'Login')
+@section('title', 'ورود')
 
 @section('content')
 <div class="container">
-    <div class="auth-pages">
-        <div class="auth-left">
+    <div class="info">
+        <div>
+            <div class="container">
             @if (session()->has('success_message'))
             <div class="alert alert-success">
                 {{ session()->get('success_message') }}
@@ -19,47 +20,36 @@
                 </ul>
             </div>
             @endif
-            <h2>Returning Customer</h2>
-            <div class="spacer"></div>
-
-            <form action="{{ route('login') }}" method="POST">
-                {{ csrf_field() }}
-
-                <input type="email" id="email" name="email" value="{{ old('email') }}" placeholder="Email" required autofocus>
-                <input type="password" id="password" name="password" value="{{ old('password') }}" placeholder="Password" required>
-
-                <div class="login-container">
-                    <button type="submit" class="auth-button">Login</button>
-                    <label>
-                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                    </label>
+                <div class="youplay-login">
+                    <div class="youplay-form text-center">
+                        <h1>ورود به سایت</h1>
+                        <form action="{{ route('login') }}" method="POST"> {{ csrf_field() }}
+                            <div class="youplay-input">
+                                <input type="email" id="email" name="email" value="{{ old('email') }}" placeholder="Email" required autofocus>                </div>
+                            <div class="youplay-input">
+                                <input type="password" id="password" name="password" value="{{ old('password') }}" placeholder="Password" required>
+                            </div>
+                            <div class="youplay-input">
+                                
+                            </div>
+                            <div class="youplay-checkbox mb-15 ml-5">
+                                <input type="checkbox" id="nav-rememberme" name="remember" {{ old('remember') ? 'checked' : '' }}> 
+                                <label for="nav-rememberme">مرا به خاطر بسپار</label>
+                            </div>
+                            <button type="submit" class="btn btn-default db">ورود</button>
+                            <div class="spacer"></div>
+                            <a href="{{ route('password.request') }}">
+                                رمز عبور را فراموش کرده اید؟
+                            </a>
+                        </form>
+                    </div>
+                    <div class="spacer"></div>
+                    <a href="{{ route('register') }}" class="auth-button-hollow">ایجاد حساب جدید</a>
                 </div>
-
-                <div class="spacer"></div>
-
-                <a href="{{ route('password.request') }}">
-                    Forgot Your Password?
-                </a>
-
-            </form>
-        </div>
-
-        <div class="auth-right">
-            <h2>New Customer</h2>
-            <div class="spacer"></div>
-            <p><strong>Save time now.</strong></p>
-            <p>You don't need an account to checkout.</p>
-            <div class="spacer"></div>
-            <a href="{{ route('guestCheckout.index') }}" class="auth-button-hollow">Continue as Guest</a>
-            <div class="spacer"></div>
-            &nbsp;
-            <div class="spacer"></div>
-            <p><strong>Save time later.</strong></p>
-            <p>Create an account for fast checkout and easy access to order history.</p>
-            <div class="spacer"></div>
-            <a href="{{ route('register') }}" class="auth-button-hollow">Create Account</a>
-
+            </div>
         </div>
     </div>
 </div>
+
+
 @endsection

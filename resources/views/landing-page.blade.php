@@ -1,94 +1,761 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
+@section('title') صفحه نخست @endsection
+@section('content')
+ <!--
+Banner
 
-        <title>Laravel Ecommerce Example</title>
+Additional classes:
+.small
+.xsmall
+.big
+.full
+-->
+<section class="youplay-banner banner-top youplay-banner-parallax">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat%7CRoboto:300,400,700" rel="stylesheet">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="image" data-speed="0.4">
+    <img src="{{ asset('images/dark/banner-bg.jpg') }}" alt="" class="jarallax-img">
+</div>
 
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
 
-    </head>
-    <body>
-        <div id="app">
-            <header class="with-background">
-                <div class="top-nav container">
-                    <div class="top-nav-left">
-                        <div class="logo">Ecommerce</div>
-                        {{ menu('main', 'partials.menus.main') }}
-                    </div>
-                    <div class="top-nav-right">
-                        @include('partials.menus.main-right')
-                    </div>
-                </div> <!-- end top-nav -->
-                <div class="hero container">
-                    <div class="hero-copy">
-                        <h1>Laravel Ecommerce Demo</h1>
-                        <p>Includes multiple products, categories, a shopping cart and a checkout system with Stripe integration.</p>
-                        <div class="hero-buttons">
-                            <a href="https://www.youtube.com/playlist?list=PLEhEHUEU3x5oPTli631ZX9cxl6cU_sDaR" class="button button-white">Screencasts</a>
-                            <a href="https://github.com/drehimself/laravel-ecommerce-example" class="button button-white">GitHub</a>
-                        </div>
-                    </div> <!-- end hero-copy -->
+<div class="info">
+<div>
+    <div class="container">
+        
+        
+        
+            
+<h1>دیابلو ۳: <br></h1>
+<em>"بهترین بازی سال"</em>
+<br><br><br>
+<a class="btn btn-lg" href="#">خرید</a>
 
-                    <div class="hero-image">
-                        <img src="img/macbook-pro-laravel.png" alt="hero image">
-                    </div> <!-- end hero-image -->
-                </div> <!-- end hero -->
-            </header>
+        
+        
+    </div>
+</div>
+</div>
+</section>
+<!-- /Banner -->
 
-            <div class="featured-section">
 
-                <div class="container">
-                    <h1 class="text-center">Laravel Ecommerce</h1>
 
-                    <p class="section-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore vitae nisi, consequuntur illum dolores cumque pariatur quis provident deleniti nesciunt officia est reprehenderit sunt aliquid possimus temporibus enim eum hic lorem.</p>
 
-                    <div class="text-center button-container">
-                        <a href="#" class="button">Featured</a>
-                        <a href="#" class="button">On Sale</a>
-                    </div>
+<!--
+    Carousel
 
-                    {{-- <div class="tabs">
-                        <div class="tab">
-                            Featured
-                        </div>
-                        <div class="tab">
-                            On Sale
-                        </div>
-                    </div> --}}
+    Additional classes:
+        .youplay-carousel-size-1
+        .youplay-carousel-size-2
+        .youplay-carousel-size-3
+        .youplay-carousel-size-4
+        .youplay-carousel-size-5
+        .youplay-carousel-size-6
 
-                    <div class="products text-center">
-                        @foreach ($products as $product)
-                            <div class="product">
-                                <a href="{{ route('shop.show', $product->slug) }}"><img src="{{ productImage($product->image) }}" alt="product"></a>
-                                <a href="{{ route('shop.show', $product->slug) }}"><div class="product-name">{{ $product->name }}</div></a>
-                                <div class="product-price">{{ $product->presentPrice() }}</div>
-                            </div>
-                        @endforeach
+    Additional attributes:
+        data-autoplay
+        data-loop
+        data-dots
+        data-arrows
+        data-stage-padding
+        data-item-padding
+-->
+<div class="youplay-carousel" data-autoplay="5000">
+<a class="angled-img" href="store-product-1.html">
+    <div class="img">
+        <img src="{{ asset('images/dark/game-bloodborne-500x375.jpg') }}" alt="">
+    </div>
+    <div class="over-info">
+        <div><div>
+                <h4>Bloodborne</h4>
+                
+<div class="rating">
+<div class="rating-front" style="width: 100%;">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+</div>
+<div class="rating-back">
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+</div>
+</div>
 
-                    </div> <!-- end products -->
+            </div></div>
+    </div>
+</a>
+<a class="angled-img" href="#">
+    <div class="img">
+        <img src="{{ asset('images/dark/game-dark-souls-ii-500x375.jpg') }}" alt="">
+    </div>
+    <div class="over-info">
+        <div><div>
+                <h4>Dark Souls II</h4>
+                
+<div class="rating">
+<div class="rating-front" style="width: 90%;">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+</div>
+<div class="rating-back">
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+</div>
+</div>
 
-                    <div class="text-center button-container">
-                        <a href="{{ route('shop.index') }}" class="button">View more products</a>
-                    </div>
+            </div></div>
+    </div>
+</a>
+<a class="angled-img" href="#">
+    <div class="img">
+        <img src="{{ asset('images/dark/game-lords-of-the-fallen-500x375.jpg') }}" alt="">
+    </div>
+    <div class="over-info">
+        <div><div>
+                <h4>Lords of the Fallen</h4>
+                
+<div class="rating">
+<div class="rating-front" style="width: 80%;">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+</div>
+<div class="rating-back">
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+</div>
+</div>
 
-                </div> <!-- end container -->
+            </div></div>
+    </div>
+</a>
+<a class="angled-img" href="#">
+    <div class="img">
+        <img src="{{ asset('images/dark/game-middle-eart-shadow-of-mordor-500x375.jpg') }}" alt="">
+    </div>
+    <div class="over-info">
+        <div><div>
+                <h4>Middle-earth: Shadow of Mordor</h4>
+                
+<div class="rating">
+<div class="rating-front" style="width: 90%;">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+</div>
+<div class="rating-back">
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+</div>
+</div>
 
-            </div> <!-- end featured-section -->
+            </div></div>
+    </div>
+</a>
+<a class="angled-img" href="#">
+    <div class="img">
+        <img src="{{ asset('images/dark/game-soul-sacrifice-500x375.jpg') }}" alt="">
+    </div>
+    <div class="over-info">
+        <div><div>
+                <h4>Soul Sacrifice</h4>
+                
+<div class="rating">
+<div class="rating-front" style="width: 90%;">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+</div>
+<div class="rating-back">
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+</div>
+</div>
 
-            <blog-posts></blog-posts>
+            </div></div>
+    </div>
+</a>
+<a class="angled-img" href="#">
+    <div class="img">
+        <img src="{{ asset('images/dark/game-kingdoms-of-amalur-reckoning-500x375.jpg') }}" alt="">
+    </div>
+    <div class="over-info">
+        <div><div>
+                <h4>Kingdoms of Amalur: Reckoning</h4>
+                
+<div class="rating">
+<div class="rating-front" style="width: 90%;">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+</div>
+<div class="rating-back">
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+</div>
+</div>
 
-            @include('partials.footer')
+            </div></div>
+    </div>
+</a>
+<a class="angled-img" href="#">
+    <div class="img">
+        <img src="{{ asset('images/dark/game-the-witcher-500x375.jpg') }}" alt="">
+    </div>
+    <div class="over-info">
+        <div><div>
+                <h4>The Witcher: Rise of the White Wolf</h4>
+                
+<div class="rating">
+<div class="rating-front" style="width: 90%;">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+</div>
+<div class="rating-back">
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+</div>
+</div>
 
-        </div> <!-- end #app -->
-        <script src="js/app.js"></script>
-    </body>
-</html>
+            </div></div>
+    </div>
+</a>
+<a class="angled-img" href="#">
+    <div class="img">
+        <img src="{{ asset('images/dark/game-diablo-iii-500x375.jpg') }}" alt="">
+    </div>
+    <div class="over-info">
+        <div><div>
+                <h4>Diablo III: Reaper of Souls</h4>
+                
+<div class="rating">
+<div class="rating-front" style="width: 90%;">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+</div>
+<div class="rating-back">
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+</div>
+</div>
+
+            </div></div>
+    </div>
+</a>
+<a class="angled-img" href="#">
+    <div class="img">
+        <img src="{{ asset('images/dark/game-dragons-dogma-500x375.jpg') }}" alt="">
+    </div>
+    <div class="over-info">
+        <div><div>
+                <h4>Dragons Dogma</h4>
+                
+<div class="rating">
+<div class="rating-front" style="width: 90%;">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+</div>
+<div class="rating-back">
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+</div>
+</div>
+
+            </div></div>
+    </div>
+</a>
+</div>
+<!-- /Images With Text -->
+
+
+<!-- Specials -->
+<h2 class="container h1">Specials <a href="#" class="btn pull-right">See More</a></h2>
+
+<!--
+Carousel
+
+Additional classes:
+    .youplay-carousel-size-1
+    .youplay-carousel-size-2
+    .youplay-carousel-size-3
+    .youplay-carousel-size-4
+    .youplay-carousel-size-5
+    .youplay-carousel-size-6
+
+Additional attributes:
+    data-autoplay
+    data-loop
+    data-dots
+    data-arrows
+    data-stage-padding
+    data-item-padding
+-->
+<div class="youplay-carousel">
+<a class="angled-img" href="#">
+    <div class="img img-offset">
+        <img src="{{ asset('images/dark/game-dark-souls-ii-500x375.jpg') }}" alt="">
+        <div class="badge bg-default">
+            -20%
+        </div>
+    </div>
+    <div class="bottom-info">
+        <h4>Dark Souls II</h4>
+        <div class="row">
+            <div class="col-xs-6">
+                
+<div class="rating">
+<div class="rating-front" style="width: 90%;">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+</div>
+<div class="rating-back">
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+</div>
+</div>
+
+            </div>
+            <div class="col-xs-6">
+                <div class="price">$39.99 <sup><del>$49.99</del></sup></div>
+            </div>
+        </div>
+    </div>
+</a>
+<a class="angled-img" href="#">
+    <div class="img img-offset">
+        <img src="{{ asset('images/dark/game-prototype-500x375.jpg') }}" alt="">
+        <div class="badge bg-default">
+            +10%
+        </div>
+    </div>
+    <div class="bottom-info">
+        <h4>Prototype 3</h4>
+        <div class="row">
+            <div class="col-xs-6">
+                
+<div class="rating">
+<div class="rating-front" style="width: 90%;">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+</div>
+<div class="rating-back">
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+</div>
+</div>
+
+            </div>
+            <div class="col-xs-6">
+                <div class="price">$52 <sup><del>$47</del></sup></div>
+            </div>
+        </div>
+    </div>
+</a>
+<a class="angled-img" href="#">
+    <div class="img img-offset">
+        <img src="{{ asset('images/dark/game-half-life-3-500x375.jpg') }}" alt="">
+        <div class="badge bg-default">
+            So Sad
+        </div>
+    </div>
+    <div class="bottom-info">
+        <h4>Half Life 3</h4>
+        <div class="row">
+            <div class="col-xs-6">
+                
+<div class="rating">
+<div class="rating-front" style="width: 100%;">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+</div>
+<div class="rating-back">
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+</div>
+</div>
+
+            </div>
+            <div class="col-xs-6">
+                <div class="price"><span class="text-danger">NEVER</span></div>
+            </div>
+        </div>
+    </div>
+</a>
+<a class="angled-img" href="#">
+    <div class="img img-offset">
+        <img src="{{ asset('images/dark/game-lords-of-the-fallen-500x375.jpg') }}" alt="">
+        <div class="badge bg-default">
+            -25%
+        </div>
+    </div>
+    <div class="bottom-info">
+        <h4>Lords of the Fallen</h4>
+        <div class="row">
+            <div class="col-xs-6">
+                
+<div class="rating">
+<div class="rating-front" style="width: 70%;">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+</div>
+<div class="rating-back">
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+</div>
+</div>
+
+            </div>
+            <div class="col-xs-6">
+                <div class="price">$26.25 <sup><del>$35.00</del></sup></div>
+            </div>
+        </div>
+    </div>
+</a>
+<a class="angled-img" href="#">
+    <div class="img img-offset">
+        <img src="{{ asset('images/dark/game-dragons-dogma-500x375.jpg') }}" alt="">
+        <div class="badge bg-default">
+            -30%
+        </div>
+    </div>
+    <div class="bottom-info">
+        <h4>Dragons Dogma</h4>
+        <div class="row">
+            <div class="col-xs-6">
+                
+<div class="rating">
+<div class="rating-front" style="width: 90%;">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+</div>
+<div class="rating-back">
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+</div>
+</div>
+
+            </div>
+            <div class="col-xs-6">
+                <div class="price">$34.99 <sup><del>$49.99</del></sup></div>
+            </div>
+        </div>
+    </div>
+</a>
+<a class="angled-img" href="#">
+    <div class="img img-offset">
+        <img src="{{ asset('images/dark/game-soul-sacrifice-500x375.jpg') }}" alt="">
+        <div class="badge bg-success">
+            -100%
+        </div>
+    </div>
+    <div class="bottom-info">
+        <h4>Soul Sacrifice</h4>
+        <div class="row">
+            <div class="col-xs-6">
+                
+<div class="rating">
+<div class="rating-front" style="width: 90%;">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+</div>
+<div class="rating-back">
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+</div>
+</div>
+
+            </div>
+            <div class="col-xs-6">
+                <div class="price"><span class="text-success">FREE!</span> <sup><del>$29.99</del></sup></div>
+            </div>
+        </div>
+    </div>
+</a>
+</div>
+<!-- /Specials -->
+
+
+<!-- Preorder -->
+<div class="h2"></div>
+<section class="youplay-banner youplay-banner-parallax small">
+<div class="image" data-speed="0.4">
+    <img class="jarallax-img" src="{{ asset('images/dark/banner-witcher-3.jpg') }}" alt="">
+</div>
+
+<div class="info container align-center">
+    <div>
+        <h2>The Witcher 3:<br> Wild Hunt</h2>
+
+        <!-- See countdown init in bottom of the page -->
+        <div class="countdown h2" data-end="2019-05-21 12:00" data-timezone="EST"></div>
+
+        <br><br>
+        <a class="btn btn-lg" href="#">Pre-Order</a>
+    </div>
+</div>
+</section>
+<!-- /Preorder -->
+
+
+<!-- Latest News -->
+<h2 class="container h1">Latest News</h2>
+<section class="youplay-news container">
+<!-- Single News Block -->
+<div class="news-one">
+    <div class="row vertical-gutter">
+        <div class="col-md-4">
+            <a href="blog-post-1.html" class="angled-img">
+                <div class="img">
+                    <img src="{{ asset('images/dark/game-bloodborne-500x375.jpg') }}" alt="">
+                </div>
+                <div class="youplay-hexagon-rating youplay-hexagon-rating-small" data-max="10" data-size="50" title="9.1 out of 10"><span>9.1</span></div>
+            </a>
+        </div>
+        <div class="col-md-8">
+            <div class="clearfix">
+                <h3 class="h2 pull-left m-0"><a href="blog-post-1.html">Bloodborne - First Try!</a></h3>
+                <span class="date pull-right"><i class="fa fa-calendar"></i> Today</span>
+            </div>
+            <div class="tags">
+                <i class="fa fa-tags"></i> <a href="#">Bloodborne</a>, <a href="#">first try</a>, <a href="#">first boss problem</a>, <a href="#">newbie game</a>
+            </div>
+            <div class="description">
+                <p>
+                    Gus sit amet suum motum. Nescio quando, aut quomodo, nescio quo. Illud scio, amet tortor. Suarum impotens prohibere eum.
+                </p>
+                <p>
+                    Sum expectantes. Ego hodie expectantes. Expectantes, et misit unum de pueris Gus interficere. Et suus vos. Nescio quis, qui est bonus usus liberi ad Isai? Qui nosti ... Quis dimisit filios ad necem ... hmm? Gus!
+                </p>
+            </div>
+            <a href="blog-post-1.html" class="btn read-more pull-left">Read More</a>
+        </div>
+    </div>
+</div>
+<!-- /Single News Block -->
+ 
+<!-- Single News Block -->
+<div class="news-one">
+    <div class="row vertical-gutter">
+        <div class="col-md-4">
+            <a href="blog-post-2.html" class="angled-img">
+                <div class="img">
+                    <img src="{{ asset('images/dark/game-dark-souls-ii-500x375.jpg') }}" alt="">
+                </div>
+                <div class="youplay-hexagon-rating youplay-hexagon-rating-small" data-max="10" data-size="50" title="9 out of 10"><span>9</span></div>
+            </a>
+        </div>
+        <div class="col-md-8">
+            <div class="clearfix">
+                <h3 class="h2 pull-left m-0"><a href="blog-post-2.html">Coming to Youplay - Dark Souls II</a></h3>
+                <span class="date pull-right"><i class="fa fa-calendar"></i> March 9, 2015</span>
+            </div>
+            <div class="tags">
+                <i class="fa fa-tags"></i> <a href="#">Dark Souls II</a>, <a href="#">coming soon</a>, <a href="#">first review</a>, <a href="#">sale date</a>
+            </div>
+            <div class="description">
+                Ille vivere. Ut ad te quaerebam ... purgare caeli. Sunt uh ... nonnullus propter errorem qui de rebus inter nos et iacere puto suus in causa, id est in mensa. Levir meus, priusquam oppugnarent tempus quis, admonere dicitur. Credo quod idem mihi praesidium.
+            </div>
+            <a href="blog-post-2.html" class="btn read-more pull-left">Read More</a>
+        </div>
+    </div>
+</div>
+<!-- /Single News Block -->
+
+<!-- Single News Block -->
+<div class="news-one">
+    <div class="row vertical-gutter">
+        <div class="col-md-4">
+            <a href="blog-post-3.html" class="angled-img">
+                <div class="img">
+                    <img src="{{ asset('images/dark/game-kingdoms-of-amalur-reckoning-500x375.jpg') }}" alt="">
+                </div>
+                <div class="youplay-hexagon-rating youplay-hexagon-rating-small" data-max="10" data-size="50" title="3.8 out of 10"><span>3.8</span></div>
+            </a>
+        </div>
+        <div class="col-md-8">
+            <div class="clearfix">
+                <h3 class="h2 pull-left m-0"><a href="blog-post-3.html">Review Kingdoms of Amalur</a></h3>
+                <span class="date pull-right"><i class="fa fa-calendar"></i> March 1, 2015</span>
+            </div>
+            <div class="tags">
+                <i class="fa fa-tags"></i> <a href="#">Kingdoms of Amalur</a>, <a href="#">game</a>, <a href="#">review</a>
+            </div>
+            <div class="description">
+                Quod satis pecuniae sempiternum. Ut sciat oportet motum. Nunquam invenies eum. Hic de tabula. Ego vivere, ut debui, et nunc fiant. Istuc quod opus non est. Lorem ipsum occurrebat pragmaticam semper ut, si quis ita velim tibi bene recognoscere. Quorum duo te mihi videtur.
+            </div>
+            <a href="blog-post-3.html" class="btn read-more">Read More</a>
+        </div>
+    </div>
+</div>
+<!-- /Single News Block -->
+
+</section>
+<!-- /Latest News -->
+
+
+<!-- Partners -->
+<section class="youplay-banner youplay-banner-parallax small mt-80">
+<div class="image" data-speed="0.4">
+    <img class="jarallax-img" src="{{ asset('images/dark/banner-bg.jpg') }}" alt="">
+</div>
+
+<div class="info align-center">
+    <div>
+        <h2 class="mb-40">Partners</h2>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <!--
+                    Carousel
+
+                    Additional classes:
+                        .youplay-carousel-size-1
+                        .youplay-carousel-size-2
+                        .youplay-carousel-size-3
+                        .youplay-carousel-size-4
+                        .youplay-carousel-size-5
+                        .youplay-carousel-size-6
+
+                    Additional attributes:
+                        data-autoplay
+                        data-loop
+                        data-dots
+                        data-arrows
+                        data-stage-padding
+                        data-item-padding
+                -->
+                <div class="youplay-carousel youplay-carousel-size-6" data-autoplay="6000" data-arrows="false" data-stage-padding="0">
+                    <a href="#"><img src="{{ asset('images/dark/partner-logo-1.png') }}" alt=""></a>
+                    <a href="#"><img src="{{ asset('images/dark/partner-logo-2.png') }}" alt=""></a>
+                    <a href="#"><img src="{{ asset('images/dark/partner-logo-3.png') }}" alt=""></a>
+                    <a href="#"><img src="{{ asset('images/dark/partner-logo-4.png') }}" alt=""></a>
+                    <a href="#"><img src="{{ asset('images/dark/partner-logo-5.png') }}" alt=""></a>
+                    <a href="#"><img src="{{ asset('images/dark/partner-logo-6.png') }}" alt=""></a>
+                    <a href="#"><img src="{{ asset('images/dark/partner-logo-7.png') }}" alt=""></a>
+                    <a href="#"><img src="{{ asset('images/dark/partner-logo-8.png') }}" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+<!-- /Partners -->
+
+
+<!-- Features -->
+<h2 class="container h1">Why Buy from Us</h2>
+<section class="youplay-features container">
+<div class="col-md-3 col-sm-6">
+    <a class="feature angled-bg" href="#">
+        <i class="fab fa-cc-visa"></i>
+        <h3>Payment</h3>
+        <small>More than 10 payment systems</small>
+    </a>
+</div>
+<div class="col-md-3 col-sm-6">
+    <div class="feature angled-bg">
+        <i class="fa fa-gamepad"></i>
+        <h3>Games</h3>
+        <small>A large number of games</small>
+    </div>
+</div>
+<div class="col-md-3 col-sm-6">
+    <div class="feature angled-bg">
+        <i class="far fa-money-bill-alt"></i>
+        <h3>Cheap</h3>
+        <small>Lowest prices on the Internet</small>
+    </div>
+</div>
+<div class="col-md-3 col-sm-6">
+    <div class="feature angled-bg">
+        <i class="fa fa-users"></i>
+        <h3>Community</h3>
+        <small>The largest gaming community</small>
+    </div>
+</div>
+</section>
+@endsection     
