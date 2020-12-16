@@ -103,8 +103,18 @@ body {
 /*
  * Font
  */
+@font-face{
+  font-family: "Yekan";
+    src: url("../fonts/yekan/BYEKAN.eot");
+    src: url("../fonts/yekan/BYEKAN.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/yekan/BYEKAN.woff") format("woff"),
+        url("../fonts/yekan/BYEKAN.ttf") format("truetype"),
+        url("../fonts/yekan/BYEKAN.svg#font1") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
 body {
-    font: 14px/1.42857 "Lato", sans-serif;
+    font: 14px/1.42857 "Yekan";
     color: #fff;
     letter-spacing: 0.06em;
     -webkit-font-smoothing: antialiased;
@@ -129,7 +139,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-    font-family: "Lato", sans-serif;
+    font-family: "Yekan";
     color: #fff;
 }
 

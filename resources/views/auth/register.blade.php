@@ -1,7 +1,5 @@
-@extends('layout')
-
-@section('title', 'Sign Up for an Account')
-
+@extends('layouts.app')
+@section('title', 'ایجاد حساب کاربری')
 @section('content')
 <div class="container">
     <div class="auth-pages">

@@ -1,18 +1,12 @@
-@extends('layout')
+@extends('layouts.app')
 
-@section('title', 'Products')
+@section('title', 'محصولات')
 
 @section('extra-css')
     <link rel="stylesheet" href="{{ asset('css/algolia.css') }}">
 @endsection
 
 @section('content')
-
-    @component('components.breadcrumbs')
-        <a href="/">Home</a>
-        <i class="fa fa-chevron-right breadcrumb-separator"></i>
-        <span>Shop</span>
-    @endcomponent
 
     <div class="container">
         @if (session()->has('success_message'))
@@ -31,16 +25,100 @@
             </div>
         @endif
     </div>
-
+    {{-- <div class="side-block">
+        <p>Search by Games:</p>
+        <form action="search.html">
+            <div class="youplay-input">
+                <input type="text" name="search" placeholder="enter search term">
+            </div>
+        </form>
+    </div> --}}
+    <!-- /Side Search -->
+    
+    <!-- Side Categories -->
+    <div class="side-block">
+        <h4 class="block-title">Categories</h4>
+        <ul>
+            @foreach ($categories as $category)
+                <li class="{{ setActiveCategory($category->slug) }}"><a href="{{ route('shop.index', ['category' => $category->slug]) }}">{{ $category->name }}</a></li>
+            @endforeach
+        </ul>
+    </div>
+    <!-- /Side Categories -->
+    
+    <!-- Side Popular News -->
+    <div class="side-block">
+        <h4 class="block-title">Popular Games</h4>
+        <div class="block-content p-0">
+            <!-- Single News Block -->
+            <div class="row youplay-side-news">
+                <div class="col-xs-3 col-md-4">
+                    <a href="store-product-1.html" class="angled-img">
+                        <div class="img">
+                            <img src="assets/images/dark/game-bloodborne-500x375.jpg" alt="">
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xs-9 col-md-8">
+                    <h4 class="ellipsis"><a href="store-product-1.html" title="Bloodborne">Bloodborne</a></h4>
+                    <span class="price">$50.00</span>
+                </div>
+            </div>
+            <!-- /Single News Block -->
+    
+            <!-- Single News Block -->
+            <div class="row youplay-side-news">
+                <div class="col-xs-3 col-md-4">
+                    <a href="#" class="angled-img">
+                        <div class="img">
+                            <img src="assets/images/dark/game-dark-souls-ii-500x375.jpg" alt="">
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xs-9 col-md-8">
+                    <h4 class="ellipsis"><a href="#" title="Dark Souls II">Dark Souls II</a></h4>
+                    <span class="price">$39.99 <sup><del>$49.99</del></sup></span>
+                </div>
+            </div>
+            <!-- /Single News Block -->
+    
+            <!-- Single News Block -->
+            <div class="row youplay-side-news">
+                <div class="col-xs-3 col-md-4">
+                    <a href="#" class="angled-img">
+                        <div class="img">
+                            <img src="assets/images/dark/game-kingdoms-of-amalur-reckoning-500x375.jpg" alt="">
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xs-9 col-md-8">
+                    <h4 class="ellipsis"><a href="#" title="Kingdoms of Amalur">Kingdoms of Amalur</a></h4>
+                    <span class="price">$20.00</span>
+                </div>
+            </div>
+            <!-- /Single News Block -->
+    
+            <!-- Single News Block -->
+            <div class="row youplay-side-news">
+                <div class="col-xs-3 col-md-4">
+                    <a href="#" class="angled-img">
+                        <div class="img">
+                            <img src="assets/images/dark/game-diablo-iii-500x375.jpg" alt="">
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xs-9 col-md-8">
+                    <h4 class="ellipsis"><a href="#" title="Let's Grind Diablo III">Diablo III</a></h4>
+                    <span class="price">$10.00</span>
+                </div>
+            </div>
+            <!-- /Single News Block -->
+        </div>
+    </div>
+    <!-- /Side Popular News -->
+    
     <div class="products-section container">
-        <div class="sidebar">
-            <h3>By Category</h3>
-            <ul>
-                @foreach ($categories as $category)
-                    <li class="{{ setActiveCategory($category->slug) }}"><a href="{{ route('shop.index', ['category' => $category->slug]) }}">{{ $category->name }}</a></li>
-                @endforeach
-            </ul>
-        </div> <!-- end sidebar -->
+         
         <div>
             <div class="products-header">
                 <h1 class="stylish-heading">{{ $categoryName }}</h1>
