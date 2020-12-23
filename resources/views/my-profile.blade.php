@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('title', 'My Profile')
 
 @section('extra-css')

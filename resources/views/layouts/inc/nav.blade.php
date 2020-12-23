@@ -78,91 +78,69 @@
                         </div>
                     </div>
                 </li>
-
-
-
                 <li class="dropdown dropdown-hover dropdown-user">
-                    {{-- @if (session()->has('success_message'))
-                                <div class="alert alert-success">
-                                    {{ session()->get('success_message') }}
-        </div>
-        @endif @if(count($errors) > 0)
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-                @endforeach
+                    @if (session()->has('success_message'))
+                    <div class="alert alert-success">
+                        {{ session()->get('success_message') }}
+                    </div>
+                    @endif @if(count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
+                    @guest
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">
+                        <i class="fa fa-user"></i>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <form class="navbar-login-form" action="{{ route('login') }}" method="POST">
+                            {{ csrf_field() }}
+                            <p>نام کاربری:</p>
+                            <div class="youplay-input">
+                                <input type="email" id="email" name="email" value="{{ old('email') }}"
+                                    placeholder="Email" required autofocus>
+                            </div>
+                            <p>رمز عبور:</p>
+                            <div class="youplay-input">
+                                <input type="password" id="password" name="password" value="{{ old('password') }}"
+                                    placeholder="Password" required>
+                            </div>
+
+                            <div class="youplay-checkbox mb-15 ml-5">
+                                <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
+                                <label for="nav-rememberme">مرا به خاطر بسپار</label>
+                            </div>
+
+                            <button type="submit" class="btn btn-sm ml-0 mr-0" name="submit">ورود</button>
+                            <br>
+                            <p>
+                                <a href="{{ route('password.request') }}" class="no-fade">رمز عبور را فرموش کرده اید؟
+                                </a> | <a href="{{ route('register') }}" class="no-fade">ثبت نام</a>
+                            </p>
+                        </form>
+                    </div>
+                    @else
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">
+                        {{ Auth::user()->name }} <span class="caret"></span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                            خروج
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+                    </div>
+                    @endguest
+                </li>
             </ul>
         </div>
-        @endif --}}
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">
-            <i class="fa fa-user"></i>
-            <span class="caret"></span>
-        </a>
-        <div class="dropdown-menu">
-            <form class="navbar-login-form" action="{{ route('login') }}" method="POST">
-                {{ csrf_field() }}
-                <p>نام کاربری:</p>
-                <div class="youplay-input">
-                    <input type="email" id="email" name="email" value="{{ old('email') }}" placeholder="Email" required
-                        autofocus>
-                </div>
-                <p>رمز عبور:</p>
-                <div class="youplay-input">
-                    <input type="password" id="password" name="password" value="{{ old('password') }}"
-                        placeholder="Password" required>
-                </div>
-
-                <div class="youplay-checkbox mb-15 ml-5">
-                    <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
-                    <label for="nav-rememberme">مرا به خاطر بسپار</label>
-                </div>
-
-                <button type="submit" class="btn btn-sm ml-0 mr-0" name="submit">ورود</button>
-                <br>
-                <p>
-                    <a href="{{ route('password.request') }}" class="no-fade">رمز عبور را فرموش کرده اید؟ </a> | <a
-                        href="{{ route('register') }}" class="no-fade">ثبت نام</a>
-                </p>
-            </form>
-        </div>
-        </li>
-        {{-- <div class="login-container">
-                                    <label>
-                                        
-                                    </label>
-                                </div>
-                
-                                <div class="spacer"></div>
-                
-                            </form>
-                        
-                
-                        <div class="auth-right">
-                            <h2>New Customer</h2>
-                            <div class="spacer"></div>
-                            <p><strong>Save time now.</strong></p>
-                            <p>You don't need an account to checkout.</p>
-                            <div class="spacer"></div>
-                            <a href="{{ route('guestCheckout.index') }}" class="auth-button-hollow">Continue as
-        Guest</a>
-        <div class="spacer"></div>
-        &nbsp;
-        <div class="spacer"></div>
-        <p><strong>Save time later.</strong></p>
-        <p>Create an account for fast checkout and easy access to order history.</p>
-        <div class="spacer"></div>
-        <a href="{{ route('register') }}" class="auth-button-hollow">Create Account</a>
-
-    </div>
-    </div> --}}
-
-
-
-
-    </ul>
-
-    </div>
     </div>
 </nav>
 <!-- /Navbar -->

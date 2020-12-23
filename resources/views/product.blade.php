@@ -1,5 +1,4 @@
-@extends('layout')
-
+@extends('layouts.app')
 @section('title', $product->name)
 
 @section('extra-css')

@@ -1,5 +1,4 @@
-@extends('layout')
-
+@extends('layouts.app')
 @section('title', 'Thank You')
 
 @section('extra-css')

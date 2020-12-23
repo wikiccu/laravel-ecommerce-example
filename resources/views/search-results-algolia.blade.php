@@ -1,5 +1,4 @@
-@extends('layout')
-
+@extends('layouts.app')
 @section('title', 'Search Results Algolia')
 
 @section('extra-css')
