@@ -1,15 +1,4 @@
 <!DOCTYPE html>
-<!--
-    Name: Youplay - Game Template based on Bootstrap
-    Version: 3.3.0
-    Author: nK
-    Website: https://nkdev.info/
-    Purchase: https://themeforest.net/item/youplay-game-template-based-on-bootstrap/11306207?ref=_nK
-    Support: https://nk.ticksy.com/
-    License: You must have a valid license purchased only from ThemeForest (the above link) in order to legally use the theme for your project.
-    Copyright 2018.
--->
-    
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">

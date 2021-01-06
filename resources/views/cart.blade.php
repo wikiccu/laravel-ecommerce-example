@@ -1,21 +1,41 @@
 @extends('layouts.app')
-@section('title', 'Shopping Cart')
-
-@section('extra-css')
-    <link rel="stylesheet" href="{{ asset('css/algolia.css') }}">
-@endsection
-
+@section('title', 'سبد خرید')
 @section('content')
+<div class="content-wrap">
+        
+    <!--
+Banner
 
-    @component('components.breadcrumbs')
-        <a href="#">Home</a>
-        <i class="fa fa-chevron-right breadcrumb-separator"></i>
-        <span>Shopping Cart</span>
-    @endcomponent
+Additional classes:
+.small
+.xsmall
+.big
+.full
+-->
 
-    <div class="cart-section container">
-        <div>
-            @if (session()->has('success_message'))
+<section class="youplay-banner banner-top youplay-banner-parallax xsmall">
+
+<div class="image" data-speed="0.4">
+    <img src="assets/images/dark/banner-blog-bg.jpg" alt="" class="jarallax-img">
+</div>
+
+
+<div class="info">
+<div>
+    <div class="container">
+        
+        
+            <h1 class="h1">Cart</h1>
+        
+        
+        
+    </div>
+</div>
+</div>
+</section>
+<!-- /Banner -->
+
+@if (session()->has('success_message'))
                 <div class="alert alert-success">
                     {{ session()->get('success_message') }}
                 </div>
@@ -30,6 +50,276 @@
                     </ul>
                 </div>
             @endif
+
+
+<div class="container youplay-content">
+
+<div class="col-md-9">
+
+    <h2 class="mt-0">Your Games in Cart</h2>
+
+    <!-- Single Product Block -->
+    <div class="item angled-bg">
+        <div class="row">
+            <div class="col-lg-2 col-md-3 col-xs-4">
+                <div class="angled-img">
+                    <div class="img">
+                        <img src="assets/images/dark/game-skyrim-500x375.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-10 col-md-9 col-xs-8">
+                <div class="row">
+                    <div class="col-xs-6 col-md-9">
+                        <h4>Skyrim</h4>
+                        
+<div class="rating hidden-xs">
+<div class="rating-front" style="width: 100%;">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+</div>
+<div class="rating-back">
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+</div>
+</div>
+
+                    </div>
+                    <div class="col-xs-6 col-md-3 align-right">
+                        <div class="price">
+                            $11.99
+                        </div>
+                        <a href="#" class="remove">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Single Product Block -->
+
+    <!-- Single Product Block -->
+    <div class="item angled-bg">
+        <div class="row">
+            <div class="col-lg-2 col-md-3 col-xs-4">
+                <div class="angled-img">
+                    <div class="img">
+                        <img src="assets/images/dark/game-dragons-dogma-500x375.jpg" alt="">
+                        <div class="badge show bg-default">-30%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-10 col-md-9 col-xs-8">
+                <div class="row">
+                    <div class="col-xs-6 col-md-9">
+                        <h4>Dragons Dogma</h4>
+                        
+<div class="rating hidden-xs">
+<div class="rating-front" style="width: 90%;">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+</div>
+<div class="rating-back">
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+</div>
+</div>
+
+                    </div>
+                    <div class="col-xs-6 col-md-3 align-right">
+                        <div class="price">
+                            $34.99 <sup><del>$49.99</del></sup>
+                        </div>
+                        <a href="#" class="remove">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Single Product Block -->
+
+    <!-- Single Product Block -->
+    <div class="item angled-bg">
+        <div class="row">
+            <div class="col-lg-2 col-md-3 col-xs-4">
+                <div class="angled-img">
+                    <div class="img">
+                        <img src="assets/images/dark/game-the-witcher-500x375.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-10 col-md-9 col-xs-8">
+                <div class="row">
+                    <div class="col-xs-6 col-md-9">
+                        <h4>The Witcher</h4>
+                        
+<div class="rating hidden-xs">
+<div class="rating-front" style="width: 90%;">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+</div>
+<div class="rating-back">
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+</div>
+</div>
+
+                    </div>
+                    <div class="col-xs-6 col-md-3 align-right">
+                        <div class="price">
+                            $14.99
+                        </div>
+                        <a href="#" class="remove">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Single Product Block -->
+
+    <div class="align-right h3 mr-20 mb-20">
+        Total: <strong>$46.88</strong>
+    </div>
+    <div class="align-right">
+        <a href="checkout.html" class="btn btn-lg">Proceed to Checkout</a>
+    </div>
+</div>
+
+<!-- Right Side -->
+<div class="col-md-3">
+    
+<!-- Side Search -->
+<div class="side-block">
+<p>Search by Games:</p>
+<form action="search.html">
+<div class="youplay-input">
+    <input type="text" name="search" placeholder="enter search term">
+</div>
+</form>
+</div>
+<!-- /Side Search -->
+
+<!-- Side Categories -->
+<div class="side-block">
+<h4 class="block-title">Categories</h4>
+<ul class="block-content">
+<li><a href="#">All</a></li>
+<li><a href="#">Action</a></li>
+<li><a href="#">Adventure</a></li>
+<li><a href="#">Casual</a></li>
+<li><a href="#">Indie</a></li>
+<li><a href="#">Racing</a></li>
+<li><a href="#">RPG</a></li>
+<li><a href="#">Simulation</a></li>
+<li><a href="#">Strategy</a></li>
+</ul>
+</div>
+<!-- /Side Categories -->
+
+<!-- Side Popular News -->
+<div class="side-block">
+<h4 class="block-title">Popular Games</h4>
+<div class="block-content p-0">
+<!-- Single News Block -->
+<div class="row youplay-side-news">
+    <div class="col-xs-3 col-md-4">
+        <a href="store-product-1.html" class="angled-img">
+            <div class="img">
+                <img src="assets/images/dark/game-bloodborne-500x375.jpg" alt="">
+            </div>
+        </a>
+    </div>
+    <div class="col-xs-9 col-md-8">
+        <h4 class="ellipsis"><a href="store-product-1.html" title="Bloodborne">Bloodborne</a></h4>
+        <span class="price">$50.00</span>
+    </div>
+</div>
+<!-- /Single News Block -->
+
+<!-- Single News Block -->
+<div class="row youplay-side-news">
+    <div class="col-xs-3 col-md-4">
+        <a href="#" class="angled-img">
+            <div class="img">
+                <img src="assets/images/dark/game-dark-souls-ii-500x375.jpg" alt="">
+            </div>
+        </a>
+    </div>
+    <div class="col-xs-9 col-md-8">
+        <h4 class="ellipsis"><a href="#" title="Dark Souls II">Dark Souls II</a></h4>
+        <span class="price">$39.99 <sup><del>$49.99</del></sup></span>
+    </div>
+</div>
+<!-- /Single News Block -->
+
+<!-- Single News Block -->
+<div class="row youplay-side-news">
+    <div class="col-xs-3 col-md-4">
+        <a href="#" class="angled-img">
+            <div class="img">
+                <img src="assets/images/dark/game-kingdoms-of-amalur-reckoning-500x375.jpg" alt="">
+            </div>
+        </a>
+    </div>
+    <div class="col-xs-9 col-md-8">
+        <h4 class="ellipsis"><a href="#" title="Kingdoms of Amalur">Kingdoms of Amalur</a></h4>
+        <span class="price">$20.00</span>
+    </div>
+</div>
+<!-- /Single News Block -->
+
+<!-- Single News Block -->
+<div class="row youplay-side-news">
+    <div class="col-xs-3 col-md-4">
+        <a href="#" class="angled-img">
+            <div class="img">
+                <img src="assets/images/dark/game-diablo-iii-500x375.jpg" alt="">
+            </div>
+        </a>
+    </div>
+    <div class="col-xs-9 col-md-8">
+        <h4 class="ellipsis"><a href="#" title="Let's Grind Diablo III">Diablo III</a></h4>
+        <span class="price">$10.00</span>
+    </div>
+</div>
+<!-- /Single News Block -->
+</div>
+</div>
+<!-- /Side Popular News -->
+
+
+</div>
+<!-- /Right Side -->
+
+</div>
+
+
+    <div class="cart-section container">
+        <div>
+            
 
             @if (Cart::count() > 0)
 

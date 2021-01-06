@@ -37,7 +37,7 @@ class SaveForLaterController extends Controller
         });
 
         if ($duplicates->isNotEmpty()) {
-            return redirect()->route('cart.index')->with('success_message', 'Item is already in your Cart!');
+            return redirect()->route('cart.index')->with('success_message', 'این مورد در سبد خرید موجود است');
         }
 
         Cart::instance('default')->add($item->id, $item->name, 1, $item->price)
