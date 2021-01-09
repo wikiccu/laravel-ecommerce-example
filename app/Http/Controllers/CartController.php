@@ -87,7 +87,7 @@ class CartController extends Controller
     {
         Cart::remove($id);
 
-        return back()->with('success_message', 'Item has been removed!');
+        return back()->with('success_message', 'این مورد حذف شد');
     }
 
     /**
@@ -107,12 +107,12 @@ class CartController extends Controller
         });
 
         if ($duplicates->isNotEmpty()) {
-            return redirect()->route('cart.index')->with('success_message', 'Item is already Saved For Later!');
+            return redirect()->route('cart.index')->with('success_message', 'این مورد برای خرید آتی ذخیره شده است');
         }
 
         Cart::instance('saveForLater')->add($item->id, $item->name, 1, $item->price)
             ->associate('App\Product');
 
-        return redirect()->route('cart.index')->with('success_message', 'Item has been Saved For Later!');
+        return redirect()->route('cart.index')->with('success_message', 'این مورد برای خرید های آتی ذخیره شد');
     }
 }

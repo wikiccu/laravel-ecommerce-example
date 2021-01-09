@@ -14,7 +14,7 @@
         <!-- Social Buttons -->
         <div class="social">
             <div class="container">
-                <h3>Connect socially with <strong>Youplay</strong></h3>
+                <h3>با ما در رسانه های اجتماعی همراه باشید</h3>
 
                 <div class="social-icons">
                     <div class="social-icon">
@@ -51,7 +51,7 @@
         <!-- Copyright -->
         <div class="copyright">
             <div class="container">
-                <p>2018 &copy; <strong>nK</strong>. All rights reserved</p>
+                <p>کلیه حقوق محفوظ است</p>
             </div>
         </div>
         <!-- /Copyright -->
