@@ -33,49 +33,66 @@
                         <i class="fa fa-shopping-cart"></i>
                     </a>
                     <div class="dropdown-menu">
-                        <div class="row youplay-side-news">
-                            <div class="col-xs-3 col-md-4">
-                                <a href="#" class="angled-img">
-                                    <div class="img">
-                                        <img src="{{ asset('images/dark/game-bloodborne-500x375.jpg') }}" alt="">
+                        @if (session()->has('success_message'))
+                            <div class="alert alert-success">
+                                {{ session()->get('success_message') }}
+                            </div>
+                        @endif
+
+                        @if (count($errors) > 0)
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        @if (Cart::count() > 0)
+                            <h5>{{ Cart::count() }} مورد در سبد خرید می باشد</h5>
+                            @foreach (Cart::content() as $item)
+                                <div class="row youplay-side-news">
+                                    <div class="col-xs-3 col-md-4">
+                                        <a href="#" class="angled-img">
+                                            <div class="img">
+                                                <a href="{{ route('shop.show', $item->model->slug) }}"><img
+                                                        src="{{ productImage($item->model->image) }}" alt="item"
+                                                        class="cart-table-img"></a>
+                                            </div>
+                                        </a>
                                     </div>
-                                </a>
-                            </div>
-                            <div class="col-xs-9 col-md-8">
-                                <a href="#" class="pull-right mr-10"><i class="fa fa-times"></i></a>
+                                    <div class="col-xs-9 col-md-8">
+                                        <form action="{{ route('cart.destroy', $item->rowId) }}" method="POST">
+                                            {{ csrf_field() }}
+                                            {{ method_field('DELETE') }}
 
-                                <h4 class="ellipsis"><a href="#">Bloodborne</a></h4>
+                                            <button type="submit" class="pull-right mr-10"> <i class="fa fa-times"></i>
+                                            </button>
+                                        </form>
 
-                                <span class="quantity">1 × <span class="amount">$50.00</span></span>
-                            </div>
-                        </div>
-                        <div class="row youplay-side-news">
-                            <div class="col-xs-3 col-md-4">
-                                <a href="#" class="angled-img">
-                                    <div class="img">
+                                        <h4 class="ellipsis"><a
+                                                href="{{ route('shop.show', $item->model->slug) }}">{{ $item->model->name }}
+                                            </a></h4>
 
-                                        <img src="{{ asset('images/dark/game-kingdoms-of-amalur-reckoning-500x375.jpg') }}"
-                                            alt="">
-
+                                        <span class="quantity"><span
+                                                class="amount">{{ presentPrice($item->subtotal) }}</span></span>
                                     </div>
-                                </a>
+                                </div>
+                            @endforeach
+
+                            <div class="ml-20 mr-20 pull-left">مجموع پرداختی:
+                                <strong>{{ presentPrice(Cart::subtotal()) }}</strong></div>
+
+                            <div class="btn-group pull-right m-15">
+                                <a href="{{ route('cart.index') }}" class="btn btn-default btn-sm">سبد خرید</a>
+                                <a href="{{ route('checkout.index') }}" class="btn btn-default btn-sm">پرداخت</a>
                             </div>
-                            <div class="col-xs-9 col-md-8">
-                                <a href="#" class="pull-right mr-10"><i class="fa fa-times"></i></a>
-
-                                <h4 class="ellipsis"><a href="#">Kingdoms of Amalur</a></h4>
-
-                                <span class="quantity">1 × <span class="amount">$20.00</span></span>
+                        @else
+                            <h3>موردی در سبد خرید موجود نیست </h3> <br /><br /><br />
+                            <div class="align-right">
+                                <a href="{{ route('shop.index') }}" class="btn btn-lg">بازگشت به فروشگاه</a>
                             </div>
-                        </div>
-
-                        <div class="ml-20 mr-20 pull-right"><strong>Subtotal:</strong> <span
-                                class="amount">$70.00</span></div>
-
-                        <div class="btn-group pull-right m-15">
-                            <a href="#" class="btn btn-default btn-sm">View Cart</a>
-                            <a href="#" class="btn btn-default btn-sm">Checkout</a>
-                        </div>
+                        @endif
                     </div>
                 </li>
                 <li class="dropdown dropdown-hover dropdown-user">
@@ -85,6 +102,21 @@
                             <span class="caret"></span>
                         </a>
                         <div class="dropdown-menu">
+                            @if (session()->has('success_message'))
+                                <div class="alert alert-success">
+                                    {{ session()->get('success_message') }}
+                                </div>
+                            @endif
+
+                            @if (count($errors) > 0)
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                             <form class="navbar-login-form" action="{{ route('login') }}" method="POST">
                                 {{ csrf_field() }}
                                 <p>نام کاربری:</p>
@@ -99,7 +131,8 @@
                                 </div>
 
                                 <div class="youplay-checkbox mb-15 ml-5">
-                                    <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
+                                    <input type="checkbox" id="nav-rememberme" name="remember"
+                                        {{ old('remember') ? 'checked' : '' }}>
                                     <label for="nav-rememberme">مرا به خاطر بسپار</label>
                                 </div>
 
@@ -113,7 +146,7 @@
                         </div>
                     @else
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">
-                            {{ Auth::user()->name }} <span class="caret"></span> 
+                            {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
                         <div class="dropdown-menu">
                             <ul>
@@ -127,10 +160,11 @@
                                         سفارش ها
                                     </a>
                                 </li>
-                               
+
                                 <li>
-                                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                                document.getElementById('logout-form').submit();">
+                                    <a href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                                                document.getElementById('logout-form').submit();">
                                         خروج
                                     </a>
                                 </li>
