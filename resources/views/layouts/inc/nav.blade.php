@@ -88,9 +88,9 @@
                                 <a href="{{ route('checkout.index') }}" class="btn btn-default btn-sm">پرداخت</a>
                             </div>
                         @else
-                            <h3>موردی در سبد خرید موجود نیست </h3> <br /><br /><br />
+                            <h4>موردی در سبد خرید موجود نیست </h4> <br /><br /><br />
                             <div class="align-right">
-                                <a href="{{ route('shop.index') }}" class="btn btn-lg">بازگشت به فروشگاه</a>
+                                <a href="{{ route('shop.index') }}" class="btn btn-default btn-sm">بازگشت به فروشگاه</a>
                             </div>
                         @endif
                     </div>

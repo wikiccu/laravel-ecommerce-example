@@ -11,6 +11,10 @@
     @endcomponent --}}
     <div class="content-wrap">
         <div class="container">
+            
+        </div>
+        <!--Banner -->
+        <section class="youplay-banner banner-top youplay-banner-parallax">
             @if (session()->has('success_message'))
                 <div class="alert alert-success">
                     {{ session()->get('success_message') }}
@@ -26,9 +30,6 @@
                     </ul>
                 </div>
             @endif
-        </div>
-        <!--Banner -->
-        <section class="youplay-banner banner-top youplay-banner-parallax">
 
             <div class="image" data-speed="0.4">
                 <img src="{{ productImage($product->image) }}" alt="$product->name" class="jarallax-img" id="currentImage">

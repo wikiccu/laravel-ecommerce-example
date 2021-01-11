@@ -4,6 +4,19 @@
 @section('content')
     <div class="content-wrap no-banner">
         <div class="container youplay-store store-grid mt-0">
+            @if (session()->has('success_message'))
+            <div class="alert alert-success">
+                {{ session()->get('success_message') }}
+            </div>
+            @endif @if(count($errors) > 0)
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
             <!-- Games List -->
             <div class="col-md-9 isotope">
                 <!-- Sort Categories -->
