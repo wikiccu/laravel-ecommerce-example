@@ -11,8 +11,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
-    <meta name="description" content="Youplay - Gaming HTML Template based on Bootstrap">
-    <meta name="keywords" content="gaming, game, community, template, html, bootstrap, webpack">
+    <meta name="description" content="گیم کپ - مرکز فروش اکانت رسمی و قانونی برترین بازی ها">
+    <meta name="keywords" content=" اکانت بازی خرید فروش  ">
 
     <link rel="icon" type="image/png" href="{{ asset('images/dark/icon.png') }}">
 

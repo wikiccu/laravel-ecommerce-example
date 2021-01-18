@@ -50,7 +50,7 @@
                         <div class="product-price">{{ $product->presentPrice() }}</div>
                     </div>
                 @empty
-                    <div style="text-align: left">No items found</div>
+                    <div style="text-align: left">هیچ موردی یافت نشد</div>
                 @endforelse
             </div> <!-- end products -->
 

@@ -21,6 +21,12 @@
                         <span class="label">اکانت بازی</span>
                     </a>
                 </li>
+                <li class="dropdown dropdown-hover">
+                    <a href="{{ route('shop.index') }}" role="button">
+                        تماس با ما
+                        <span class="label">پشتیبانی</span>
+                    </a>
+                </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>
@@ -81,7 +87,8 @@
                             @endforeach
 
                             <div class="ml-20 mr-20 pull-left">مجموع پرداختی:
-                                <strong>{{ presentPrice(Cart::subtotal()) }}</strong></div>
+                                <strong>{{ presentPrice(Cart::subtotal()) }}</strong>
+                            </div>
 
                             <div class="btn-group pull-right m-15">
                                 <a href="{{ route('cart.index') }}" class="btn btn-default btn-sm">سبد خرید</a>
@@ -140,7 +147,10 @@
                                 <br>
                                 <p>
                                     <a href="{{ route('password.request') }}" class="no-fade">رمز عبور را فرموش کرده اید؟
-                                    </a> | <a href="{{ route('register') }}" class="no-fade">ثبت نام</a>
+                                    </a>
+                                    |
+                                    <a class="no-fade" data-toggle="modal" data-target="#nav-registration" href="#" class="no-fade">ثبت نام</a>
+                                   
                                 </p>
                             </form>
                         </div>
@@ -164,7 +174,7 @@
                                 <li>
                                     <a href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
-                                                                                document.getElementById('logout-form').submit();">
+                                                                                            document.getElementById('logout-form').submit();">
                                         خروج
                                     </a>
                                 </li>

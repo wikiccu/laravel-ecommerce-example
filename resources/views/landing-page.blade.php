@@ -550,7 +550,7 @@ Additional attributes:
 
             </div>
             <div class="col-xs-6">
-                <div class="price"><span class="text-success">FREE!</span> <sup><del>$29.99</del></sup></div>
+                <div class="price"><span class="text-success"> </span> <sup><del> </del></sup></div>
             </div>
         </div>
     </div>

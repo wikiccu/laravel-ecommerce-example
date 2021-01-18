@@ -22,7 +22,6 @@
                 <!-- Sort Categories -->
                 <ul class="pagination isotope-options">
                     <li data-filter="all" class="active"><span>همه</span></li>
-                    <li data-filter="free"><span>Free</span></li>
                     <li data-filter="popular"><span>محبوب</span></li>
                     <li data-filter="specials"><span>ویژه</span></li>
                     <li data-filter="upcoming"><span>در آینده</span></li>
@@ -68,9 +67,8 @@
                             </a>
                         </div>
                     @empty
-                        <div style="text-align: center">No items found</div>
+                        <div style="text-align: center"> هیچ موردی یافت نشد </div>  
                     @endforelse
-
 
                 </div>
                 {{ $products->appends(request()->input())->links() }}
