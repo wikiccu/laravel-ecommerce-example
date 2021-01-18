@@ -80,10 +80,10 @@
 
                 <!-- Side Search -->
                 <div class="side-block">
-                    <p>Search by Games:</p>
+                    <p>جستجو:</p>
                     <form action="search.html">
                         <div class="youplay-input">
-                            <input type="text" name="search" placeholder="enter search term">
+                            <input type="text" name="search" placeholder="عبارت جستجو را وارد کنید">
                         </div>
                     </form>
                 </div>

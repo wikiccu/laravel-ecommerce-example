@@ -129,12 +129,12 @@
                                 <p>نام کاربری:</p>
                                 <div class="youplay-input">
                                     <input type="email" id="email" name="email" value="{{ old('email') }}"
-                                        placeholder="Email" required autofocus>
+                                        placeholder="ایمیل" required autofocus>
                                 </div>
                                 <p>رمز عبور:</p>
                                 <div class="youplay-input">
                                     <input type="password" id="password" name="password" value="{{ old('password') }}"
-                                        placeholder="Password" required>
+                                        placeholder="رمز عبور" required>
                                 </div>
 
                                 <div class="youplay-checkbox mb-15 ml-5">

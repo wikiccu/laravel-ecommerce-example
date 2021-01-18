@@ -26,7 +26,7 @@
                         <p>رمز عبور:</p>
                         <div class="youplay-input">
                             <input id="password" type="password" class="form-control" name="password"
-                                placeholder="Password" placeholder="رمز عبور" required>
+                                placeholder="رمز عبور" placeholder="رمز عبور" required>
                         </div>
                         <p>تایید رمز عبور:</p>
                         <div class="youplay-input">
