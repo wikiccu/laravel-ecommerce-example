@@ -2,20 +2,13 @@
 <footer class="youplay-footer youplay-footer-parallax">
     
     <div class="image" data-speed="0.4" data-img-position="50% 0%">
-        <img src="assets/images/dark/footer-bg.jpg" alt="" class="jarallax-img">
+        <img src="{{ asset('images/dark/footer-bg.jpg') }}" alt="" class="jarallax-img">
     </div>
-
-
 <div class="wrapper">
-
-    
-
-    
         <!-- Social Buttons -->
         <div class="social">
             <div class="container">
                 <h3>با ما در رسانه های اجتماعی همراه باشید</h3>
-
                 <div class="social-icons">
                     <div class="social-icon">
                         <a href="#">

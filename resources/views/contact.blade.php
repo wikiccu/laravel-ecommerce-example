@@ -14,21 +14,15 @@ Additional classes:
 .full
 -->
 <section class="youplay-banner banner-top youplay-banner-parallax small">
-
+    
 <div class="image" data-speed="0.4">
-    <img src="assets/images/dark/banner-blog-bg.jpg" alt="" class="jarallax-img">
+    <img src="{{ asset('images/dark/banner-blog-bg.jpg') }}  " alt="" class="jarallax-img">
 </div>
-
 
 <div class="info">
 <div>
     <div class="container">
-        
-        
-            <h1 class="h1">تماس با ما</h1>
-        
-        
-        
+        <h1 class="h1">تماس با ما</h1>
     </div>
 </div>
 </div>

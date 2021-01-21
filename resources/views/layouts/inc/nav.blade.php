@@ -18,7 +18,13 @@
                 <li class="dropdown dropdown-hover">
                     <a href="{{ route('shop.index') }}" role="button">
                         فروشگاه
-                        <span class="label">اکانت بازی</span>
+                        {{-- <span class="label">اکانت بازی</span> --}}
+                    </a>
+                </li>
+                <li class="dropdown dropdown-hover">
+                    <a href="{{ route('contact') }}" role="button">
+                        قوانین
+                        {{-- <span class="label">قوانین خرید</span> --}}
                     </a>
                 </li>
                 <li class="dropdown dropdown-hover">
@@ -27,6 +33,7 @@
                         <span class="label">پشتیبانی</span>
                     </a>
                 </li>
+                
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>
