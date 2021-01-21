@@ -77,7 +77,7 @@
                             @endforeach
 
                             <div class="form-group">
-                                <label>Categories</label>
+                                <label>دسته بندی</label>
 
                                 <ul style="list-style-type: none; padding-left: 0">
                                 @foreach ($allCategories as $category)

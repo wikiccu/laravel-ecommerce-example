@@ -5,17 +5,18 @@
     <div class="content-wrap no-banner">
         <div class="container youplay-store store-grid mt-0">
             @if (session()->has('success_message'))
-            <div class="alert alert-success">
-                {{ session()->get('success_message') }}
-            </div>
-            @endif @if(count($errors) > 0)
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
+                <div class="alert alert-success">
+                    {{ session()->get('success_message') }}
+                </div>
+            @endif
+            @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
             @endif
             <!-- Games List -->
             <div class="col-md-9 isotope">
@@ -67,7 +68,7 @@
                             </a>
                         </div>
                     @empty
-                        <div style="text-align: center"> هیچ موردی یافت نشد </div>  
+                        <div style="text-align: center"> هیچ موردی یافت نشد </div>
                     @endforelse
 
                 </div>
@@ -91,7 +92,7 @@
 
                 <!-- Side Categories -->
                 <div class="side-block">
-                    <h4 class="block-title">Categories</h4>
+                    <h4 class="block-title">دسته بندی</h4>
                     <ul class="block-content">
                         @foreach ($categories as $category)
                             <li class="{{ setActiveCategory($category->slug) }}"><a
@@ -104,16 +105,16 @@
 
                 <!-- Side Popular News -->
                 <div class="side-block">
-                    <h4 class="block-title">Sort Games</h4>
+                    <h4 class="block-title">مرتب سازی</h4>
                     <ul class="block-content">
                         <li>
                             <a href="{{ route('shop.index', ['category' => request()->category, 'sort' => 'low_high']) }}">
-                                Low to High
+                                ارزانترین
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('shop.index', ['category' => request()->category, 'sort' => 'high_low']) }}">High
-                                to Low</a>
+                            <a href="{{ route('shop.index', ['category' => request()->category, 'sort' => 'high_low']) }}">
+                                گرانترین</a>
                         </li>
                     </ul>
                 </div>
@@ -122,4 +123,3 @@
         </div>
     </div>
 @endsection
-

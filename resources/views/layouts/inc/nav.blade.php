@@ -22,7 +22,7 @@
                     </a>
                 </li>
                 <li class="dropdown dropdown-hover">
-                    <a href="{{ route('shop.index') }}" role="button">
+                    <a href="{{ route('contact') }}" role="button">
                         تماس با ما
                         <span class="label">پشتیبانی</span>
                     </a>

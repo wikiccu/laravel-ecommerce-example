@@ -17,7 +17,7 @@ class Product extends Model
 
     public function presentPrice()
     {
-        return '$'.number_format($this->price / 100, 2);
+        return number_format($this->price , 0).' تومان';
     }
 
     public function scopeMightAlsoLike($query)

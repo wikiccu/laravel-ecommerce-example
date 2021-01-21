@@ -113,7 +113,7 @@
 
                 <!-- Side Categories -->
                 <div class="side-block">
-                    <h4 class="block-title">Categories</h4>
+                    <h4 class="block-title">دسته بندی</h4>
                     <ul class="block-content">
                         <li><a href="#">All</a></li>
                         <li><a href="#">Action</a></li>
