@@ -8,9 +8,8 @@
             </div>
             <div class="modal-body">
 
-                <form action="#" method="post" action="{{ route('register') }}">
+                <form action="{{ route('register') }}" method="post" >
                     {{ csrf_field() }}
-
                     <div>
                         <p>نام و نام خانوادگی:</p>
                         <div class="youplay-input">
