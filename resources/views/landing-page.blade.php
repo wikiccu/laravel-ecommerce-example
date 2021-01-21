@@ -59,6 +59,44 @@ Additional classes:
         data-stage-padding
         data-item-padding
 -->
+{{-- @forelse ($products as $product)
+                        <div class="item col-lg-4 col-md-6 col-xs-12" data-filters="popular">
+                            <a href="{{ route('shop.show', $product->slug) }}" class="angled-img">
+                                <div class="img img-offset">
+                                    <img src="{{ productImage($product->image) }}" alt="{{ $product->slug }}">
+                                </div>
+                                <div class="bottom-info">
+                                    <h4>{{ $product->name }}</h4>
+                                    <div class="row">
+                                        <div class="col-xs-6">
+
+                                            <div class="rating">
+                                                <div class="rating-front" style="width: 100%;">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                                <div class="rating-back">
+                                                    <i class="far fa-star"></i>
+                                                    <i class="far fa-star"></i>
+                                                    <i class="far fa-star"></i>
+                                                    <i class="far fa-star"></i>
+                                                    <i class="far fa-star"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <div class="price">
+                                                {{ $product->presentPrice() }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                     @endforelse --}}
 <div class="youplay-carousel" data-autoplay="5000">
 <a class="angled-img" href="store-product-1.html">
     <div class="img">
@@ -559,123 +597,6 @@ Additional attributes:
 <!-- /Specials -->
 
 
-<!-- Preorder -->
-<div class="h2"></div>
-<section class="youplay-banner youplay-banner-parallax small">
-<div class="image" data-speed="0.4">
-    <img class="jarallax-img" src="{{ asset('images/dark/banner-witcher-3.jpg') }}" alt="">
-</div>
-
-<div class="info container align-center">
-    <div>
-        <h2>The Witcher 3:<br> Wild Hunt</h2>
-
-        <!-- See countdown init in bottom of the page -->
-        <div class="countdown h2" data-end="2019-05-21 12:00" data-timezone="EST"></div>
-
-        <br><br>
-        <a class="btn btn-lg" href="#">Pre-Order</a>
-    </div>
-</div>
-</section>
-<!-- /Preorder -->
-
-
-<!-- Latest News -->
-<h2 class="container h1">Latest News</h2>
-<section class="youplay-news container">
-<!-- Single News Block -->
-<div class="news-one">
-    <div class="row vertical-gutter">
-        <div class="col-md-4">
-            <a href="blog-post-1.html" class="angled-img">
-                <div class="img">
-                    <img src="{{ asset('images/dark/game-bloodborne-500x375.jpg') }}" alt="">
-                </div>
-                <div class="youplay-hexagon-rating youplay-hexagon-rating-small" data-max="10" data-size="50" title="9.1 out of 10"><span>9.1</span></div>
-            </a>
-        </div>
-        <div class="col-md-8">
-            <div class="clearfix">
-                <h3 class="h2 pull-left m-0"><a href="blog-post-1.html">Bloodborne - First Try!</a></h3>
-                <span class="date pull-right"><i class="fa fa-calendar"></i> Today</span>
-            </div>
-            <div class="tags">
-                <i class="fa fa-tags"></i> <a href="#">Bloodborne</a>, <a href="#">first try</a>, <a href="#">first boss problem</a>, <a href="#">newbie game</a>
-            </div>
-            <div class="description">
-                <p>
-                    Gus sit amet suum motum. Nescio quando, aut quomodo, nescio quo. Illud scio, amet tortor. Suarum impotens prohibere eum.
-                </p>
-                <p>
-                    Sum expectantes. Ego hodie expectantes. Expectantes, et misit unum de pueris Gus interficere. Et suus vos. Nescio quis, qui est bonus usus liberi ad Isai? Qui nosti ... Quis dimisit filios ad necem ... hmm? Gus!
-                </p>
-            </div>
-            <a href="blog-post-1.html" class="btn read-more pull-left">Read More</a>
-        </div>
-    </div>
-</div>
-<!-- /Single News Block -->
- 
-<!-- Single News Block -->
-<div class="news-one">
-    <div class="row vertical-gutter">
-        <div class="col-md-4">
-            <a href="blog-post-2.html" class="angled-img">
-                <div class="img">
-                    <img src="{{ asset('images/dark/game-dark-souls-ii-500x375.jpg') }}" alt="">
-                </div>
-                <div class="youplay-hexagon-rating youplay-hexagon-rating-small" data-max="10" data-size="50" title="9 out of 10"><span>9</span></div>
-            </a>
-        </div>
-        <div class="col-md-8">
-            <div class="clearfix">
-                <h3 class="h2 pull-left m-0"><a href="blog-post-2.html">Coming to Youplay - Dark Souls II</a></h3>
-                <span class="date pull-right"><i class="fa fa-calendar"></i> March 9, 2015</span>
-            </div>
-            <div class="tags">
-                <i class="fa fa-tags"></i> <a href="#">Dark Souls II</a>, <a href="#">coming soon</a>, <a href="#">first review</a>, <a href="#">sale date</a>
-            </div>
-            <div class="description">
-                Ille vivere. Ut ad te quaerebam ... purgare caeli. Sunt uh ... nonnullus propter errorem qui de rebus inter nos et iacere puto suus in causa, id est in mensa. Levir meus, priusquam oppugnarent tempus quis, admonere dicitur. Credo quod idem mihi praesidium.
-            </div>
-            <a href="blog-post-2.html" class="btn read-more pull-left">Read More</a>
-        </div>
-    </div>
-</div>
-<!-- /Single News Block -->
-
-<!-- Single News Block -->
-<div class="news-one">
-    <div class="row vertical-gutter">
-        <div class="col-md-4">
-            <a href="blog-post-3.html" class="angled-img">
-                <div class="img">
-                    <img src="{{ asset('images/dark/game-kingdoms-of-amalur-reckoning-500x375.jpg') }}" alt="">
-                </div>
-                <div class="youplay-hexagon-rating youplay-hexagon-rating-small" data-max="10" data-size="50" title="3.8 out of 10"><span>3.8</span></div>
-            </a>
-        </div>
-        <div class="col-md-8">
-            <div class="clearfix">
-                <h3 class="h2 pull-left m-0"><a href="blog-post-3.html">Review Kingdoms of Amalur</a></h3>
-                <span class="date pull-right"><i class="fa fa-calendar"></i> March 1, 2015</span>
-            </div>
-            <div class="tags">
-                <i class="fa fa-tags"></i> <a href="#">Kingdoms of Amalur</a>, <a href="#">game</a>, <a href="#">review</a>
-            </div>
-            <div class="description">
-                Quod satis pecuniae sempiternum. Ut sciat oportet motum. Nunquam invenies eum. Hic de tabula. Ego vivere, ut debui, et nunc fiant. Istuc quod opus non est. Lorem ipsum occurrebat pragmaticam semper ut, si quis ita velim tibi bene recognoscere. Quorum duo te mihi videtur.
-            </div>
-            <a href="blog-post-3.html" class="btn read-more">Read More</a>
-        </div>
-    </div>
-</div>
-<!-- /Single News Block -->
-
-</section>
-<!-- /Latest News -->
-
 
 <!-- Partners -->
 <section class="youplay-banner youplay-banner-parallax small mt-80">
@@ -727,34 +648,34 @@ Additional attributes:
 
 
 <!-- Features -->
-<h2 class="container h1">Why Buy from Us</h2>
+<h2 class="container h1">چرا از ما بخرید؟</h2>
 <section class="youplay-features container">
 <div class="col-md-3 col-sm-6">
     <a class="feature angled-bg" href="#">
         <i class="fab fa-cc-visa"></i>
-        <h3>Payment</h3>
-        <small>More than 10 payment systems</small>
+        <h3>تیم پشتیبانی 24 ساعته</h3>
+        <small>پشتیبانی 24 ساعته در خدمت مشتریان گرامی </small>
     </a>
 </div>
 <div class="col-md-3 col-sm-6">
     <div class="feature angled-bg">
         <i class="fa fa-gamepad"></i>
-        <h3>Games</h3>
-        <small>A large number of games</small>
+        <h3>حفظ اطلاعات </h3>
+        <small>نگهداری امن از اطلاعات شما </small>
     </div>
 </div>
 <div class="col-md-3 col-sm-6">
     <div class="feature angled-bg">
         <i class="far fa-money-bill-alt"></i>
-        <h3>Cheap</h3>
-        <small>Lowest prices on the Internet</small>
+        <h3>ضمانت پرداخت</h3>
+        <small>ضمانت بازگشت وجه در صورت مشکل</small>
     </div>
 </div>
 <div class="col-md-3 col-sm-6">
     <div class="feature angled-bg">
         <i class="fa fa-users"></i>
-        <h3>Community</h3>
-        <small>The largest gaming community</small>
+        <h3>انجام سفارش سریع</h3>
+        <small>انجام سفارش ها در کوتاه ترین زمان </small>
     </div>
 </div>
 </section>
