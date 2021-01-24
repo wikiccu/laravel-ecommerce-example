@@ -24,8 +24,8 @@ class ShopController extends Controller
             });
             $categoryName = optional($categories->where('slug', request()->category)->first())->name;
         } else {
-            $products = Product::where('featured', true);
-            $categoryName = 'Featured';
+            $products = Product::where('id','>', 0);
+            $categoryName = 'All';
         }
 
         if (request()->sort == 'low_high') {

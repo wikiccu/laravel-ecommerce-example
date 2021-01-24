@@ -2,20 +2,18 @@
 
 namespace App\Http\Controllers\Voyager;
 
-use App\Product;
 use App\Category;
 use App\CategoryProduct;
-use Illuminate\Http\Request;
-use TCG\Voyager\Facades\Voyager;
-use Illuminate\Support\Facades\DB;
-use TCG\Voyager\Events\BreadDataAdded;
+use App\Product;
 use Illuminate\Database\Eloquent\Model;
-use TCG\Voyager\Events\BreadDataDeleted;
-use TCG\Voyager\Events\BreadDataUpdated;
-use TCG\Voyager\Events\BreadImagesDeleted;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use TCG\Voyager\Database\Schema\SchemaManager;
-use TCG\Voyager\Http\Controllers\VoyagerBaseController;
+use TCG\Voyager\Events\BreadDataAdded;
+use TCG\Voyager\Events\BreadDataUpdated;
+use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Http\Controllers\Traits\BreadRelationshipParser;
+use TCG\Voyager\Http\Controllers\VoyagerBaseController;
 
 class ProductsController extends VoyagerBaseController
 {
@@ -60,7 +58,7 @@ class ProductsController extends VoyagerBaseController
 
             if ($search->value && $search->key && $search->filter) {
                 $search_filter = ($search->filter == 'equals') ? '=' : 'LIKE';
-                $search_value = ($search->filter == 'equals') ? $search->value : '%'.$search->value.'%';
+                $search_value = ($search->filter == 'equals') ? $search->value : '%' . $search->value . '%';
                 $query->where($search->key, $search_filter, $search_value);
             }
 
@@ -132,8 +130,8 @@ class ProductsController extends VoyagerBaseController
         $id = $id instanceof Model ? $id->{$id->getKeyName()} : $id;
 
         $dataTypeContent = (strlen($dataType->model_name) != 0)
-            ? app($dataType->model_name)->findOrFail($id)
-            : DB::table($dataType->name)->where('id', $id)->first(); // If Model doest exist, get data from table name
+        ? app($dataType->model_name)->findOrFail($id)
+        : DB::table($dataType->name)->where('id', $id)->first(); // If Model doest exist, get data from table name
 
         foreach ($dataType->editRows as $key => $row) {
             $details = json_decode($row->details);
@@ -201,7 +199,7 @@ class ProductsController extends VoyagerBaseController
             return redirect()
                 ->route("voyager.{$dataType->slug}.index")
                 ->with([
-                    'message'    => __('voyager.generic.successfully_updated')." {$dataType->display_name_singular}",
+                    'message' => __('voyager.generic.successfully_updated') . " {$dataType->display_name_singular}",
                     'alert-type' => 'success',
                 ]);
         }
@@ -230,8 +228,8 @@ class ProductsController extends VoyagerBaseController
         $this->authorize('add', app($dataType->model_name));
 
         $dataTypeContent = (strlen($dataType->model_name) != 0)
-                            ? new $dataType->model_name()
-                            : false;
+        ? new $dataType->model_name()
+        : false;
 
         foreach ($dataType->addRows as $key => $row) {
             $details = json_decode($row->details);
@@ -292,9 +290,9 @@ class ProductsController extends VoyagerBaseController
             return redirect()
                 ->route("voyager.{$dataType->slug}.index")
                 ->with([
-                        'message'    => __('voyager.generic.successfully_added_new')." {$dataType->display_name_singular}",
-                        'alert-type' => 'success',
-                    ]);
+                    'message' => __('voyager.generic.successfully_added_new') . " {$dataType->display_name_singular}",
+                    'alert-type' => 'success',
+                ]);
         }
     }
 

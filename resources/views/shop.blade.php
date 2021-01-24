@@ -22,10 +22,10 @@
             <div class="col-md-9 isotope">
                 <!-- Sort Categories -->
                 <ul class="pagination isotope-options">
-                    <li data-filter="all" class="active"><span>همه</span></li>
+                    {{-- <li data-filter="all" class="active"><span>همه</span></li>
                     <li data-filter="popular"><span>محبوب</span></li>
                     <li data-filter="specials"><span>ویژه</span></li>
-                    <li data-filter="upcoming"><span>در آینده</span></li>
+                    <li data-filter="upcoming"><span>در آینده</span></li> --}}
                 </ul>
                 <!-- /Sort Categories -->
                 <div class="isotope-list row vertical-gutter">

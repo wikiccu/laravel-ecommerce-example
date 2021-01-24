@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\Category;
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Validator;
@@ -17,6 +18,7 @@ class CartController extends Controller
     public function index()
     {
         $mightAlsoLike = Product::mightAlsoLike()->get();
+        $categories = Category::all();
 
         return view('cart')->with([
             'mightAlsoLike' => $mightAlsoLike,
@@ -24,6 +26,7 @@ class CartController extends Controller
             'newSubtotal' => getNumbers()->get('newSubtotal'),
             'newTax' => getNumbers()->get('newTax'),
             'newTotal' => getNumbers()->get('newTotal'),
+            'categories' => $categories,
         ]);
     }
 
@@ -59,7 +62,7 @@ class CartController extends Controller
     public function update(Request $request, $id)
     {
         $validator = Validator::make($request->all(), [
-            'quantity' => 'required|numeric|between:1,5'
+            'quantity' => 'required|numeric|between:1,5',
         ]);
 
         if ($validator->fails()) {

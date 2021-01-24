@@ -23,9 +23,7 @@ Route::post('/paypal-checkout', 'CheckoutController@paypalCheckout')->name('chec
 
 Route::get('/guestCheckout', 'CheckoutController@index')->name('guestCheckout.index');
 
-
 Route::get('/thankyou', 'ConfirmationController@index')->name('confirmation.index');
-
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
@@ -36,9 +34,12 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/search', 'ShopController@search')->name('search');
-Route::get('/contact', function(){
+Route::get('/contact', function () {
     return view("contact");
 })->name('contact');
+Route::get('/rules', function () {
+    return view("rules");
+})->name('rules');
 
 // Route::get('/search-algolia', 'ShopController@searchAlgolia')->name('search-algolia');
 

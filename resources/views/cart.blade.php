@@ -101,10 +101,10 @@
 
                 <!-- Side Search -->
                 <div class="side-block">
-                    <p>Search by Games:</p>
+                    <p>جستجو:</p>
                     <form action="search.html">
                         <div class="youplay-input">
-                            <input type="text" name="search" placeholder="enter search term">
+                            <input type="text" name="search" placeholder="عبارت جستجو را وارد کنید">
                         </div>
                     </form>
                 </div>
@@ -114,18 +114,30 @@
                 <div class="side-block">
                     <h4 class="block-title">دسته بندی</h4>
                     <ul class="block-content">
-                        <li><a href="#">All</a></li>
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Adventure</a></li>
-                        <li><a href="#">Casual</a></li>
-                        <li><a href="#">Indie</a></li>
-                        <li><a href="#">Racing</a></li>
-                        <li><a href="#">RPG</a></li>
-                        <li><a href="#">Simulation</a></li>
-                        <li><a href="#">Strategy</a></li>
+                        @foreach ($categories as $category)
+                            <li class="{{ setActiveCategory($category->slug) }}"><a
+                                    href="{{ route('shop.index', ['category' => $category->slug]) }}">{{ $category->name }}</a>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
                 <!-- /Side Categories -->
+
+                <!-- Side Popular News -->
+                <div class="side-block">
+                    <h4 class="block-title">مرتب سازی</h4>
+                    <ul class="block-content">
+                        <li>
+                            <a href="{{ route('shop.index', ['category' => request()->category, 'sort' => 'low_high']) }}">
+                                ارزانترین
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('shop.index', ['category' => request()->category, 'sort' => 'high_low']) }}">
+                                گرانترین</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
             <!-- /Right Side -->
         </div>

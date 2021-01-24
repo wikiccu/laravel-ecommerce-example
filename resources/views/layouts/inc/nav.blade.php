@@ -22,7 +22,7 @@
                     </a>
                 </li>
                 <li class="dropdown dropdown-hover">
-                    <a href="{{ route('contact') }}" role="button">
+                    <a href="{{ route('rules') }}" role="button">
                         قوانین
                         {{-- <span class="label">قوانین خرید</span> --}}
                     </a>
