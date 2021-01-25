@@ -11,6 +11,7 @@
     @include('layouts.inc.nav')
 @include('layouts.inc.registerform')
 @yield('content')
+@yield('mightLike')
 @include('layouts.inc.footer')
 @include('layouts.inc.searchandscripts')
 </body>

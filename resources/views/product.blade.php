@@ -28,68 +28,70 @@
                     </ul>
                 </div>
             @endif
-            <!-- Post Info -->
             <article class="news-one">
 
                 <!-- Post Text -->
-                    
-                    <div>
-                        <!-- 1440x900.jpg -->
-                        <a href="{{ productImage($product->image) }}" class="angled-img image-popup">
-                            <div class="img">
-                                <img src="{{ productImage($product->image) }}" alt="{{ $product->name }}"
-                                    class="jarallax-img" id="currentImage">
-                            </div>
-                            <i class="fa fa-search-plus icon"></i>
-                        </a>
-                    </div>
+                
+                <div class="description">
+                    <a href="{{ productImage($product->image) }}" class="angled-img pull-left video-popup">
+                        <div class="img">
+                            <img src="{{ productImage($product->image) }}" alt="{{ $product->name }}">
+                        </div>
+                        <i class="fa fa-search-plus icon"></i>
+                    </a>
                     <h2 class="mt-0">توضیحات</h2>
-                    <div class="description">
-                        <p>
-                            {!! $product->description !!}
-                        </p>
-                    </div>
+                    <h4> {{ $product->name }} </h4>
+                    <p>
+                        {!! $product->description !!}
+                    </p>
                     <div class="align-left h3 mr-20 mb-20">
                         قیمت: <strong> {{ $product->presentPrice() }}</strong>
                     </div>
-                    <div class="reviews-block mb-0">
-                        <form id="addtocart" action="{{ route('cart.store', $product) }}" method="POST">
-                            {{ csrf_field() }}
-                            <button type="submit" class="btn active btn-success">اضافه به سبد خرید</button>
-                        </form>
-                    </div>
-                    
+
+                </div>
+                <!-- /Post Text -->
             </article>
+            <div class="reviews-block mb-0">
+                <form id="addtocart" action="{{ route('cart.store', $product) }}" method="POST">
+                    {{ csrf_field() }}
+                    <button type="submit" class="btn active btn-success">اضافه به سبد خرید</button>
+                </form>
+            </div>
         </div>
-        {{-- @include('partials.might-like') --}}
-    @endsection
-    @section('extra-js')
-        <script>
-            (function() {
-                const currentImage = document.querySelector('#currentImage');
-                const images = document.querySelectorAll('.product-section-thumbnail');
+    </div>
+@endsection
+@section('mightLike')
+    @include('partials.might-like')
+@endsection
 
-                images.forEach((element) => element.addEventListener('click', thumbnailClick));
+{{-- @section('extra-js')
+<script>
+    (function() {
+        const currentImage = document.querySelector('#currentImage');
+        const images = document.querySelectorAll('.product-section-thumbnail');
 
-                function thumbnailClick(e) {
-                    currentImage.classList.remove('active');
+        images.forEach((element) => element.addEventListener('click', thumbnailClick));
 
-                    currentImage.addEventListener('transitionend', () => {
-                        currentImage.src = this.querySelector('img').src;
-                        currentImage.classList.add('active');
-                    })
+        function thumbnailClick(e) {
+            currentImage.classList.remove('active');
 
-                    images.forEach((element) => element.classList.remove('selected'));
-                    this.classList.add('selected');
-                }
+            currentImage.addEventListener('transitionend', () => {
+                currentImage.src = this.querySelector('img').src;
+                currentImage.classList.add('active');
+            })
 
-            })();
+            images.forEach((element) => element.classList.remove('selected'));
+            this.classList.add('selected');
+        }
 
-        </script>
+    })();
 
-        <!-- Include AlgoliaSearch JS Client and autocomplete.js library -->
-        {{-- <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js">
-        </script>
-        <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
-        <script src="{{ asset('js/algolia.js') }}"></script> --}}
-    @endsection
+</script>
+
+<!-- Include AlgoliaSearch JS Client and autocomplete.js library -->
+{{-- <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
+    <script src="{{ asset('js/algolia.js') }}"></script> 
+@endsection 
+--}}

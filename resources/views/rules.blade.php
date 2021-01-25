@@ -2,74 +2,57 @@
 
 @section('title', 'تماس با ما')
 @section('content')
-<div class="content-wrap">
-        
-    <!--
-Banner
+<div class="content-wrap no-banner">
+    <h1 class="container">قوانین سایت</h1>
+    <div class="container youplay-news youplay-post">
+        <!-- Post Info -->
+        <article class="news-one">
 
-Additional classes:
-.small
-.xsmall
-.big
-.full
--->
-<section class="youplay-banner banner-top youplay-banner-parallax small">
-    
-<div class="image" data-speed="0.4">
-    <img src="{{ asset('images/dark/banner-blog-bg.jpg') }}  " alt="" class="jarallax-img">
-</div>
+            <!-- Post Text -->
+            <div class="description">
 
-<div class="info">
-<div>
-    <div class="container">
-        <h1 class="h1">تماس با ما</h1>
+                <h3>Prohibere</h3>
+                <p>
+                    Striga! Ut custodiant te sermonem dicens - periculi ... periculo! Non ego illud numquam. Dixi sunt implicatae. Elatus deinde manubrio! Gus sit amet suum motum. Nescio quando, aut quomodo, nescio quo. Illud scio, amet tortor. Suarum impotens prohibere eum.
+                </p>
+
+                <h3>Ego hodie</h3>
+                <p>
+                    Sum expectantes. Ego hodie expectantes. Expectantes, et misit unum de pueris Gus interficere. Et suus vos. Nescio quis, qui est bonus usus liberi ad Isai? Qui nosti ... Quis dimisit filios ad necem ... hmm? Gus! Est, ante me factus singulis decem gradibus. Et nunc ad aliud opus mihi tandem tollendum est puer ille consensus et nunc fugit. Ipse suus obtinuit eam. Non solum autem illa, sed te tractantur in se trahens felis.
+                </p>
+
+                <p>
+                    No! Hoc non credant? Gus habet cameras ubique placet. Audire te! Non, omnia novit, omnia simul. Ubi eras hodie? In Lab! Et vos nolite cogitare suus 'possible ut Tyrus de cigarette elevaverunt CAPSA vestris? Age! Tu non vides? Pompeius extrema partem es. Tu omne quod ille voluit.
+                </p>
+
+                <p>
+                    Tu nunc coci ejus. Tu autem cocus Lab et probavimus liceat mihi sine causa est nunc coci interficere. Reputo it! Suus egregie. Ut antecedat. Quod si putas me posse facere, ergo ante. Pone aute in caput, et nunc interficere. Faciat! Fac. Fac. Fac.
+                </p>
+                
+                <h3>Saule</h3>
+                <p>
+                    Saule ... , ostendit quod hoc quidem ... hoc quod dixit, ... potuit adiutorium mihi, et educat me in tota vita nova facio certus ut Im 'non invenit. Ego quidem illius memini Saul. Gus sit amet interfíciat mei tota familia. Nunc opus est mihi iste. Saul ... nunc Saule.
+                </p>
+
+                <p>
+                    Suspicio? Bene ... tunc ibimus? Quis uh ... CONEXUS locus his diebus? Quisque semper aliquid videtur, in volutpat mauris. Nolo enim dicere. Vobis neque ab aliis. Ego feci memetipsum explicans. Gus mortuus est. Lorem opus habeo.
+                </p>
+
+                <p>
+                    Jackson Isai? Tu quoque ... A te quidem a ante. Vos scitis quod blinking res Ive 'been vocans super vos? Et conteram illud, et conteram hoc. Maledicant druggie excors. Iam hoc tu facere conatus sum ad te in omni tempore?
+                </p>
+
+                <h3>Ludum mutavit</h3>
+                <p>
+                    Verbum est ex. Et ... sunt occidat. Videtur quod est super omne oppidum. Quis transfretavit tu iratus es contudit cranium cum dolor apparatus. Qui curis! Modo nobis certamen est, qui non credunt at.
+                </p>
+
+                <p>
+                    Nonne vides quid sit? Tu es ... Jesse me respice. Tu ... blowfish sunt. A blowfish! Cogitare. Statura pusillus, nec sapientium panem, nec artificum. Sed predators facile prædam blowfish secretum telum non se habet. Non ille? Quid faciam blowfish, Isai. Blowfish quid faciat? In blowfish inflat, purus?
+                </p>
+            </div>
+            <!-- /Post Text -->
+        </article>
     </div>
-</div>
-</div>
-</section>
-<!-- /Banner -->
-
-
-<div class="container youplay-content">
-
-<div class="row">
-    <div class="col-md-9 col-md-push-3">
-        <!-- Contact Form -->
-        <div class="youplay-form p-0">
-            <h2 class="mt-0">پیغام خود را برای ما بفرستید</h2>
-
-            <form action="php/contact.php" method="POST" role="form" class="youplay-form-ajax" data-toggle="validator">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="youplay-input form-group">
-                            <input type="text" name="name" placeholder="نام " required>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="youplay-input form-group">
-                            <input type="email" name="email" placeholder="ایمیل" required>
-                        </div>
-                    </div>
-                </div>
-                <div class="youplay-textarea form-group">
-                    <textarea name="message" placeholder="متن پیام" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-default">ارسال</button>
-            </form>
-        </div>
-        <!-- /Contact Form -->
-    </div>
-    <div class="col-md-3 col-md-pull-9">
-        <h2 class="mt-0">اطلاعات تماس</h2>
-
-        رامسر خیابان مطهری<br>
-        جنب بانک صادرات ساختمان حیات بخش
-        <br><br>
-        تلفن: 09332636994<br>
-        ایمیل: info[at]gamecap.ir<br>
-        <br>
-    </div>
-</div>
-
 </div>
 @endsection

@@ -141,7 +141,10 @@
             </div>
             <!-- /Right Side -->
         </div>
-        {{-- @include('partials.might-like') --}}
+
+    @endsection
+    @section('mightLike')
+        @include('partials.might-like')
     @endsection
     {{-- @section('extra-js')
     <script>

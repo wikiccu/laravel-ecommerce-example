@@ -92,11 +92,6 @@
                     </div>
 
                 </div>
-                <div class="col-xs-6">
-                    <div class="price">
-                        {{ $product->presentPrice() }}
-                    </div>
-                </div>
             </a>
         @endforeach
     </div>
@@ -154,11 +149,6 @@
 
                     </div>
 
-                </div>
-                <div class="col-xs-6">
-                    <div class="price">
-                        {{ $product->presentPrice() }}
-                    </div>
                 </div>
             </a>
         @endforeach
@@ -218,7 +208,7 @@
     <h2 class="container h1">چرا از ما بخرید؟</h2>
     <section class="youplay-features container">
         <div class="col-md-3 col-sm-6">
-            <a class="feature angled-bg" href="#">
+            <a class="feature angled-bg" href="{{ route('contact') }}">
                 <i class="fab fa-cc-visa"></i>
                 <h3>تیم پشتیبانی 24 ساعته</h3>
                 <small>پشتیبانی 24 ساعته در خدمت مشتریان گرامی </small>
