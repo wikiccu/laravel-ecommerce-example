@@ -41,11 +41,11 @@
                         <i class="fa fa-search"></i>
                     </a>
                 </li>
-                <li class="dropdown dropdown-hover dropdown-cart">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                        <i class="fa fa-shopping-cart"></i>
+                <li class="dropdown dropdown-hover dropdown-cart"> 
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> 
+                         <i class="fa fa-shopping-cart"></i> @if (Cart::count() > 0)<span class="badge bg-default">  {{ Cart::count() }} </span> @endif
                     </a>
-                    <div class="dropdown-menu">
+                    <div class="dropdown-menu"> 
                         @if (session()->has('success_message'))
                             <div class="alert alert-success">
                                 {{ session()->get('success_message') }}

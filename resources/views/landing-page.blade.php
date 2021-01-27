@@ -61,8 +61,9 @@
             -->
     <div class="youplay-carousel" data-autoplay="5000">
         @foreach ($products as $product)
-
             <a class="angled-img" href="{{ route('shop.show', $product->slug) }}">
+
+
                 <div class="img">
                     <img src="{{ productImage($product->image) }}" alt="{{ $product->slug }}">
                 </div>

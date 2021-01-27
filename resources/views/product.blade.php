@@ -31,7 +31,9 @@
             <article class="news-one">
 
                 <!-- Post Text -->
-                
+                <p> {{ $product->image }} </p>
+                <p> {{ productImage($product->image) }} </p>
+                <p>D:\GitHub\laravel\public\app\public\products\January2021</p>
                 <div class="description">
                     <a href="{{ productImage($product->image) }}" class="angled-img pull-left video-popup">
                         <div class="img">

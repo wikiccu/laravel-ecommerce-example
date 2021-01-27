@@ -20,9 +20,8 @@ function setActiveCategory($category, $output = 'active')
 
 function productImage($path)
 {
-    return $path && file_exists('storage/'.$path) ? asset('storage/'.$path) : asset('img/not-found.jpg');
+    return $path && file_exists('app/public/'.$path) ? asset('app/public/'.$path) : asset('img/not-found.jpg');
 }
-
 function getNumbers()
 {
     $tax = config('cart.tax') / 100;
